@@ -5,9 +5,7 @@ import java.util.Scanner;
 public class HW1 {
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		
-		try {
+		try (Scanner input = new Scanner(System.in)) {
 			System.out.println("Please select which section you would like to run (1 or 2):");
 			int selection = input.nextInt();
 			if(selection == 1) {
@@ -23,15 +21,10 @@ public class HW1 {
 		catch(InputMismatchException e){
 			System.out.println("Please input a valid integer");
 		}
-		finally {
-			input.close();
-		}
 	}
 	
 	public static void hw1_1() {
-		Scanner input = new Scanner(System.in);	
-		
-		try {
+		try (Scanner input = new Scanner(System.in)) {
 			System.out.println("First int: ");
 			int num1 = input.nextInt();
 			System.out.println("Second int: ");
@@ -48,14 +41,10 @@ public class HW1 {
 			System.out.println(e);
 			hw1_1();
 		}
-		finally {
-			input.close();
-		}
 	}
 	
 	public static void hw1_2() {
-		Scanner input = new Scanner(System.in);
-		try {
+		try (Scanner input = new Scanner(System.in)) {
 			Random rand = new Random();
 			int [] numArray = new int [100];
 			for (int i=0;i<numArray.length;i++) {
@@ -77,9 +66,6 @@ public class HW1 {
 			System.out.println("The following error has occured");
 			System.out.println(e);
 			hw1_2();
-		}
-		finally {
-			input.close();
 		}
 	}
 
