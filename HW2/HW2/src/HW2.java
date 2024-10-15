@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class HW2 {
     public static void main(String[] args) throws Exception 
     {
-        
+        question3();
     }
         //1
         //in the GenericStack Class 
@@ -11,7 +11,7 @@ public class HW2 {
 
 
         //2
-        public void question2()
+        public static void question2()
         {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(14);
@@ -38,7 +38,7 @@ public class HW2 {
         }
         
         //3
-        public void question3()
+        public static void question3()
         {
             Scanner scannerA = new Scanner(System.in);
             try
