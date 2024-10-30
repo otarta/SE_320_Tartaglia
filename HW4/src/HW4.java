@@ -1,17 +1,23 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.NumberFormat;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Locale;
+import java.util.TreeSet;
 public class HW4 {
     public static void main(String[] args) throws Exception 
     {
+        Question3();
     }
 
 
 
     public static void Question1()
     {
-        LinkedHashSet<String> hash1 = new HashSet<String>();
-        LinnkedHashSet<String> hash2 = new HashSet<String>();
+        LinkedHashSet<String> hash1 = new LinkedHashSet<String>();
+        LinkedHashSet<String> hash2 = new LinkedHashSet<String>();
 
         hash1.add("George");
         hash1.add("Jim");
@@ -41,9 +47,10 @@ public class HW4 {
         System.out.println(difference);
     }
 
-    public static void Question2()
+    public static void Question2() 
     {
-        try(BufferedReader br = new BufferedReader(new FileReader("")))
+       
+        try( BufferedReader br = new BufferedReader(new FileReader("question2.txt"));)
         {
             TreeSet<String> wordSet = new TreeSet<String>();
             String line;
@@ -57,6 +64,10 @@ public class HW4 {
             }
             System.out.println(wordSet);
         }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("File not found");
+        }
         catch(IOException e)
         {
             System.out.println("Error reading file ");
@@ -65,13 +76,10 @@ public class HW4 {
         {
             System.out.println("An error has occurred");
         }
-        finally
-        {
-            br.close();
-        }
     }
 
-
+    //used suppress warnings so that ugly yellow lines went away
+    @SuppressWarnings("deprecation")
     public static void Question3()
     {
         Locale enUS = new Locale("en", "US");
@@ -82,8 +90,8 @@ public class HW4 {
         double number = 12345.678;
         String numbeString = "12345.678";
 
-        double formattedNumber_3_a = ukNumbers.format(number);
-        double formattedNumber_3_b = NumberFormat.getCurrencyInstance(enUS).format(number);
+        String formattedNumber_3_a = ukNumbers.format(number);
+        String formattedNumber_3_b = NumberFormat.getCurrencyInstance(enUS).format(number);
         double formattedNumber_3_c = Double.parseDouble(numbeString);
 
         System.out.println(formattedNumber_3_a);
