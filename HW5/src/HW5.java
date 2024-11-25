@@ -24,4 +24,23 @@ public class HW5 {
             System.out.println(e.getMessage());
         }
     }
+
+
+
+/*
+ * requires: lst is not null
+ *           all elements of lst must be of the same type
+ *           elements of lst must be sorted
+ */
+public static void removeDuplicates(List lst) {
+    if (lst == null || lst.size() == 0) return;
+    List copy = new ArrayList(lst);
+    Iterator elements = copy.iterator();
+    Object pre = elements.next();
+    while(elements.hasNext()) {
+    Object nex = elements.next();
+    if (pre.equals(nex)) lst.remove(nex);
+    else pre = nex;
+    }
+    }
 }
