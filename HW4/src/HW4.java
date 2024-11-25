@@ -9,7 +9,7 @@ import java.util.TreeSet;
 public class HW4 {
     public static void main(String[] args) throws Exception 
     {
-        Question3();
+        Question2();
     }
 
 

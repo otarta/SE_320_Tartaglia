@@ -8,8 +8,7 @@
             "type": "java",
             "name": "Current File",
             "request": "launch",
-            "mainClass": "${file}",
-            "vmArgs": "-enableassertions"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
